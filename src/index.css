@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: hsl(220 40% 8%);
+  --color-foreground: hsl(210 40% 98%);
+  --color-card: hsl(220 35% 12%);
+  --color-card-foreground: hsl(210 40% 98%);
+  --color-primary: hsl(45 93% 58%);
+  --color-primary-foreground: hsl(220 40% 8%);
+  --color-secondary: hsl(220 30% 18%);
+  --color-secondary-foreground: hsl(210 40% 98%);
+  --color-muted: hsl(220 30% 18%);
+  --color-muted-foreground: hsl(215 20% 65%);
+  --color-accent: hsl(45 93% 58%);
+  --color-accent-foreground: hsl(220 40% 8%);
+  --color-destructive: hsl(0 84% 60%);
+  --color-border: hsl(220 30% 20%);
+  --color-input: hsl(220 30% 20%);
+  --color-ring: hsl(45 93% 58%);
+  --color-crypto-blue: #0b1421;
+  --color-crypto-blue-light: #0f1a2b;
+  --color-panel: #0b152f;
+  --color-panel-deep: #050c1a;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(245, 158, 11, 0.12), transparent 55%),
+      radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.12), transparent 50%),
+      linear-gradient(180deg, #050c1a 0%, #0b1421 45%, #091328 100%);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@utility bg-gradient-gold {
+  background-image: linear-gradient(135deg, #fbbf24 0%, #f59e0b 45%, #d97706 100%);
+  color: #0b1421;
+}
+
+@utility bg-gradient-card {
+  background-image: linear-gradient(160deg, rgba(15, 31, 63, 0.95) 0%, rgba(11, 20, 33, 0.95) 100%);
+}
+
+@utility shadow-glow {
+  box-shadow: 0 0 28px rgba(245, 158, 11, 0.28);
+}
+
+@utility shadow-card {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
